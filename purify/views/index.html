@@ -31,11 +31,7 @@ function authenticate() {
 
 <!-- search bar  -->
 <script>
-<<<<<<< HEAD
-function doSearch() {
-    var query = $("#search").val();
-    console.log(query);
-=======
+
 $('#search').bind('keyup', function(e) {
     var query = $(this).val();
     if (query != '') {
@@ -45,13 +41,14 @@ $('#search').bind('keyup', function(e) {
     else {
         $('pre').html('');
     }
-}); 
+});
+
 function getTitle(track) {
     return track.title;
 }
 
 function doSearch(query) {
->>>>>>> a6f74f0aad3124c1dcbdfe9abff8095ff319b23f
+    var query = $("#search").val();
     // Substitute this line with whatever code you use to do an AJAX call
     // Essentially call a serverside page by passing the search keyword and
     // call onReturn afterwards
