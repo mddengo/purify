@@ -19,7 +19,11 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, './views', 'index.html'));
 });
 app.get('/callback', function(req, res) {
-    res.sendFile(path.join(__dirname, './views', 'callback.html'))});
+    res.sendFile(path.join(__dirname, './views', 'callback.html'))
+});
+app.get('/player', function(req, res) {
+    res.sendFile(path.join(__dirname, './views', 'player.html'))
+});
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
