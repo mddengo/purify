@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<script src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js"></script>
+<html>
+    <head>
+        <title>player</title>
+    </head>
+    <body>
+        <div id="widgetTest"></div>
+        <script type="text/javascript">
+            SC.oEmbed('https://soundcloud.com/tydollasign/plays', {
+                      element: document.getElementById('widgetTest'),
+                      maxwidth: .5*screen.width,
+                      maxheight: .4*screen.height,
+                      auto_play: true
+            });
+        </script>
+<!--
+    <script>
+        SC.initialize({
+        client_id: 'eee3748e069929800832551465ce60f5'
+        });
+
+        var track_url = 'http://soundcloud.com/forss/flickermood';
+        SC.oEmbed(track_url, { auto_play: true }).then(function(oEmbed) {
+            console.log('oEmbed response: ', oEmbed);
+            });
+    </script>-->
+</body>
+</html>
