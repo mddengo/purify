@@ -18,7 +18,7 @@ app.set('view engine', 'jade');
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, './views', 'login.html'));
 })
-app.get('/', function(req, res) {
+app.get('/index', function(req, res) {
     res.sendFile(path.join(__dirname, './views', 'index.html'));
 });
 app.get('/callback', function(req, res) {
