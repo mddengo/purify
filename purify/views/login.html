@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "->
+<html>
+    <head>
+    <title>Login</title>
+    </head>
+    <body>
+        <script src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js"></script>
+        <script>
+            SC.initialize({
+                client_id: 'eee3748e069929800832551465ce60f5',
+                redirect_uri: 'http://localhost:3000/callback'
+                });
+
+                function authenticate() {
+                    SC.connect().then(function() {
+                        return SC.get('/me');
+                        }).then(function(me) {
+                        window.location.replace('/index')
+                        alert('Hello, ' + me.username);
+                    });
+                }
+        </script>
+        <button onclick="authenticate()">Login</button>
+    </body>
+</html>
