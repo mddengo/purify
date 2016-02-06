@@ -4,6 +4,7 @@
     <title>purify</title>
 </head>
 <body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js"></script>
 
 <script>
@@ -26,13 +27,13 @@ function authenticate() {
 <!-- search bar  -->
 <script>
 function doSearch() {
-    var s = document.getElementById("search").value;
-    console.log(s);
+    var query = $("#search").val();
+    console.log(query);
     // Substitute this line with whatever code you use to do an AJAX call
     // Essentially call a serverside page by passing the search keyword and
     // call onReturn afterwards
     SC.get('/tracks', {
-        q: s, license: 'cc-by-sa'
+        q: query
     }).then(function(tracks) {
         console.log(tracks);
     });
