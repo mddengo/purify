@@ -1,5 +1,28 @@
 body {
+ font-family: SourceSansPro;
+ font-size: 21;
+}
+
+body {
     background-color: #F2F2F2;
+}
+
+#search {
+    visibility: hidden; 
+}
+
+#filter-nowplaying {
+    visibility: hidden;
+}
+
+
+#filter-nowplaying {
+    font-variant:small-caps;
+}
+
+@font-face {
+    font-family: Din;
+    src: url('din-bold-alternate/din-boldalternate.otf');
 }
 
 @font-face {

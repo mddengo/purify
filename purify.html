@@ -10,10 +10,18 @@
     <link rel="stylesheet" href="purify.css">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
+    
 </head>
-        
+    
+    
+    
+    
+    
+    
+   
     
 <body>
+    <div class="container">
   <div class="row">
   <div class="col-md-3">
       <img src="logo.png" alt="logo" >      
@@ -24,12 +32,8 @@
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
+
     
     
   <div class="row">
@@ -39,10 +43,10 @@
       <form class="form-horizontal">
     <div class="form-group">
         
-<div class="input-group input-group-lg">
+<div class="input-group input-group-lg" id = "search">
   <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>
     </span>
-  <input type="text" class="form-control" placeholder="Search for a song, any song!" aria-describedby="sizing-addon1">
+  <input type="text" data-provide="typeahead" class="form-control" placeholder="search for a song..." aria-describedby="sizing-addon1"> 
 </div>
 </form>
       
@@ -54,25 +58,25 @@
 </div>  
 
 
+<br>
 
-    <script type="text/javascript">
-$(document).ready(function(){
-    $('input.typeahead').typeahead({
-      name: 'accounts',
-      local: ['Audi', 'BMW', 'Bugatti', 'Ferrari', 'Ford', 'Lamborghini', 'Mercedes Benz', 'Porsche', 'Rolls-Royce', 'Volkswagen']
-    });
-});  
-</script>
-    
 
-<center>
+
  
-<div class="row">
-  <div class="col-md-6">Filtering your songs from:</div>
-  <div class="col-md-6">Now playing:</div>
+<div class="row" id="filter-nowplaying">
+  <div class="col-md-6"><font color = "#6689A1">
+  filtering your songs: </font>
+    <br>
+    <label class="checkbox-horizontal">
+  <input type="checkbox" id="likes" value="likes"> likes
+    <br>
+    <label class="checkbox-horizontal">
+  <input type="checkbox" id="stream" value="stream"> stream
+</label></div>
+      <div class="col-md-6"><font color = "#6689A1">now playing:</font></div>
 </div>
     
-    </center>
+    </div>
     
 <script src="bootstrap-3.2.0-dist/js/bootstrap.js" type="text/javascript"></script>
 </body>
