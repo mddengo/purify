@@ -9,3 +9,12 @@ function findSimilarTracks(track) {
     }).then(function(tracks) {
         console.log(tracks);
 }
+
+/* Turn a list of tracks into a playlist called name */
+function makePlaylist(tracks, name) {
+    SC.connect().then(function() {
+        SC.post('/playlists', {
+            playlist: { title: name, tracks: tracks }
+        });
+    });
+}
