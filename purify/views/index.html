@@ -12,14 +12,11 @@ SC.initialize({
 });
 
 function authenticate() {
-    // initiate auth popup
-    SC.connect(function() {
-        console.log("a");
-        // this gets the authenticated user's username
-        SC.get('/me', function(me) {
+    SC.connect().then(function() {
+          return SC.get('/me');
+          }).then(function(me) {
             alert('Hello, ' + me.username);
         });
-    });
 }
 </script>
 <button onclick="authenticate()">login</button>
