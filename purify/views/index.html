@@ -1,71 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>purify</title>
+  <title>purify</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js"></script>
 </head>
 <body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-<script src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js"></script>
+  <button id='login'>login</button>
+  <input id='search'/>
+  <pre></pre>
 
-    
-    
-<script>
-SC.initialize({
-    client_id: 'eee3748e069929800832551465ce60f5',
-    redirect_uri: 'http://localhost:3000/callback'
-});
-
-function authenticate() {
-    SC.connect().then(function() {
-        return SC.get('/me');
-    }).then(function(me) {
-        alert('Hello, ' + me.username);
-    });
-}
-</script>
-<button onclick="authenticate()">login</button>
-
-
-<input id="search"/>
-<pre></pre>
-
-<!-- search bar  -->
-<script>
-
-$('#search').bind('keyup', function(e) {
-    var query = $(this).val();
-    if (query != '') {
-        console.log(query);
-        doSearch(query);
-    }
-    else {
-        $('pre').html('');
-    }
-});
-
-function getTitle(track) {
-    return track.title;
-}
-
-function doSearch(query) {
-    var query = $("#search").val();
-    // Substitute this line with whatever code you use to do an AJAX call
-    // Essentially call a serverside page by passing the search keyword and
-    // call onReturn afterwards
-    SC.get('/tracks', {
-        q: query
-    }).then(function(tracks) {
-        trackTitles = tracks.map(getTitle);
-        console.log(trackTitles);
-        // display resulsts in html
-        trackTitles = (trackTitles).join([separator='\n']);
-        $('pre').html(trackTitles);
-    });
-}
-    
-    
-</script>
-<!-- end    -->
-
+  <script src="js/soundcloud"></script>
+  <script src="js/search"></script>
 </body>
 </html>

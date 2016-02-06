@@ -24,6 +24,13 @@ app.get('/callback', function(req, res) {
 app.get('/player', function(req, res) {
     res.sendFile(path.join(__dirname, './views', 'player.html'))
 });
+app.get('/js/soundcloud', function(req, res) {
+    res.sendFile(path.join(__dirname, './js', 'soundcloud.js'))
+});
+app.get('/js/search', function(req, res) {
+    res.sendFile(path.join(__dirname, './js', 'search.js'))
+});
+
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
