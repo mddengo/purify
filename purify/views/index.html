@@ -1,4 +1,4 @@
-<script src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js"></script>
+<!DOCTYPE html>
 <html>
 <head>
     <title>purify</title>
@@ -13,12 +13,33 @@ SC.initialize({
 
 function authenticate() {
     SC.connect().then(function() {
-          return SC.get('/me');
-          }).then(function(me) {
-            alert('Hello, ' + me.username);
-        });
+        return SC.get('/me');
+    }).then(function(me) {
+        alert('Hello, ' + me.username);
+    });
 }
 </script>
-<button onclick="authenticate()">login</button>
+<button onclick="authenticate()">Login</button>
+
+<!-- search bar  -->
+<script>
+function doSearch() {
+    var s = document.getElementById("search").value;
+    console.log(s);
+    // Substitute this line with whatever code you use to do an AJAX call
+    // Essentially call a serverside page by passing the search keyword and
+    // call onReturn afterwards
+    SC.get('/tracks', {
+        q: s, license: 'cc-by-sa'
+    }).then(function(tracks) {
+        console.log(tracks);
+    });
+}
+</script>
+<input id="search" /> <input type="button" onclick="doSearch()" />
+<div id="results"></div>
+
+<!-- end    -->
+
 </body>
 </html>
