@@ -25,6 +25,8 @@ function authenticate() {
 
 
 <input id="search"/>
+<pre></pre>
+
 <!-- search bar  -->
 <script>
 $('#search').bind('keyup', function(e) {
@@ -32,6 +34,9 @@ $('#search').bind('keyup', function(e) {
     if (query != '') {
         console.log(query);
         doSearch(query);
+    }
+    else {
+        $('pre').html('');
     }
 }); 
 function getTitle(track) {
@@ -45,11 +50,14 @@ function doSearch(query) {
     SC.get('/tracks', {
         q: query
     }).then(function(tracks) {
-        console.log(tracks.map(getTitle));
+        trackTitles = tracks.map(getTitle);
+        console.log(trackTitles);
+        // display resulsts in html
+        trackTitles = (trackTitles).join([separator='\n']);
+        $('pre').html(trackTitles);
     });
 }
 </script>
-
 <!-- end    -->
 
 </body>
