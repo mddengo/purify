@@ -2,7 +2,22 @@
 <html>
 <head>
     <title>purify</title>
+    <style>
+            img { 
+            width:100%; 
+}
+</style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<link href="bootstrap-3.2.0-dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="purify.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
+    
+    
+    
+    
+    
+    
 <body>
 <script src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js"></script>
 
@@ -38,10 +53,80 @@ function doSearch() {
     });
 }
 </script>
-<input id="search" /> <input type="button" onclick="doSearch()" />
+
 <div id="results"></div>
 
 <!-- end    -->
+    
+    
+    
+    
+    
+    
 
+    
+    <div class="row">
+  <div class="col-md-3">
+      <img src="logo.png" alt="logo" >      
+      </div>
+    </div>
+    
+    <div class="container">
+  
+    
+    
+<br>
+<br>
+<br>
+
+
+        
+        
+        
+        
+    
+  <div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+      
+      <form class="form-horizontal">
+    <div class="form-group">
+        
+<div class="input-group input-group-lg" id = "search">
+  <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+    </span>
+  <input type="text" data-provide="typeahead" class="form-control" placeholder="search for a song..." aria-describedby="sizing-addon1"> 
+</div>
+</form>
+      
+        
+      
+      </div>
+  <div class="col-md-4"></div>
+</div>
+</div>  
+
+
+<br>
+
+
+
+ 
+<div class="row" id="filter-nowplaying">
+  <div class="col-md-6"><font color = "#6689A1">
+  filtering your songs: </font>
+    <br>
+    <label class="checkbox-horizontal">
+  <input type="checkbox" id="likes" value="likes"> likes
+    <br>
+    <label class="checkbox-horizontal">
+  <input type="checkbox" id="stream" value="stream"> stream
+</label></div>
+      <div class="col-md-6"><font color = "#6689A1">now playing:</font></div>
+</div>
+    
+    </div>
+    
+<script src="bootstrap-3.2.0-dist/js/bootstrap.js" type="text/javascript"></script>
 </body>
 </html>

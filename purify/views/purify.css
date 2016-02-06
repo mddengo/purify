@@ -1,6 +1,6 @@
 body {
  font-family: SourceSansPro;
- font-size: 21;
+ font-size: 20;
 }
 
 body {
@@ -8,16 +8,17 @@ body {
 }
 
 #search {
-    visibility: hidden; 
+    visibility: ; 
 }
 
 #filter-nowplaying {
-    visibility: hidden;
+    visibility: ;
 }
 
 
 #filter-nowplaying {
     font-variant:small-caps;
+    font-size: 16pt;
 }
 
 @font-face {
