@@ -45,8 +45,7 @@ function doSearch(query) {
     SC.get('/tracks', {
         q: query
     }).then(function(tracks) {
-        console.log("L")
-        console.log(tracks.map(getName));
+        console.log(tracks.map(getTitle));
     });
 }
 </script>
